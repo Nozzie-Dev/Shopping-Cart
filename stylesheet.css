@@ -30,6 +30,16 @@ body::after {
      height: 250px;
      border-radius: 10px;
 }
+.qty{
+    width: 15%;
+}
+
+.quantity-counter{
+    display: inline;
+}
+.btnProucts{
+    border-radius: 5px;
+}
 
 h1 {
     color: #343a40;
