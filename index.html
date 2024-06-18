@@ -17,7 +17,7 @@
                     <h3 class="float-md-start mb-0">Glimpses Of Türkiye</h3>
                     <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#home">Home</a>
                     <a class="nav-link fw-bold py-1 px-0" href="#products">Products</a>
-                    <h3>
+                    <h3 id="cart-link">
                         <a class="nav-link fw-bold py-1 px-0" href="javascript:void(0);" onclick="toggleCart()">
                             <i class="fa fa-shopping-basket" aria-hidden="true"><span id="itemCount" class="badge badge-pill ">0</span></i>
                         </a>
@@ -26,7 +26,11 @@
             </div>
         </header>
     </div>
-    <!--Home/Hero-->
+    <div class="container" id="liftBody">
+        <div class="overlay-lift">  
+        </div>
+        <div class="container" id="bodyContent">
+            <!--Home/Hero-->
     <div id="home" class="container mt-5">
         <div class="text-center">
             <div class="container">
@@ -52,7 +56,7 @@
                     <button class="btn-secondary" id="decrement1">-</button>
                     <input type="number" id="quantity1" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment1">+</button>
-                    <button onclick="addToCart(300, 'Sufi Whirling Man', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+                    <button onclick="addToCart(300, 'Sufi Whirling Man', 'quantity1')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
                 </div>
                </div>
             <div id="products" class="col-lg-3">
@@ -65,7 +69,7 @@
                     <button class="btn-secondary" id="decrement2">-</button>
                     <input type="number" id="quantity2" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment2">+</button>
-                    <button onclick="addToCart(400, 'Blue Mosque', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(400, 'Blue Mosque', 'quantity1')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
                  </div>
             <div id="products" class="col-lg-3">
@@ -78,7 +82,7 @@
                     <button class="btn-secondary" id="decrement3">-</button>
                     <input type="number" id="quantity3" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment3">+</button>
-                    <button onclick="addToCart(250, 'Hot Air Balloon', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(250, 'Hot Air Balloon', 'quantity1')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
                  </div>
             <div id="products" class="col-lg-3">
@@ -91,7 +95,7 @@
                     <button class="btn-secondary" id="decrement4">-</button>
                     <input type="number" id="quantity4" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment4">+</button>
-                    <button onclick="addToCart(150, 'Maiden Towers', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(150, 'Maiden Towers', 'quantity1')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
                  </div>
             <div id="products" class="col-lg-3">
@@ -104,7 +108,7 @@
                     <button class="btn-secondary" id="decrement5">-</button>
                     <input type="number" id="quantity5" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment5">+</button>
-                    <button onclick="addToCart(350, 'Roman Theatre', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(350, 'Roman Theatre', 'quantity1')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
            </div>
             <div id="products" class="col-lg-3">
@@ -117,7 +121,7 @@
                     <button class="btn-secondary" id="decrement6">-</button>
                     <input type="number" id="quantity6" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment6">+</button>
-                    <button onclick="addToCart(300, 'Woman By Pool', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(300, 'Woman By Pool', 'quantity1')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
             </div>
             <div id="products" class="col-lg-3">
@@ -130,7 +134,7 @@
                     <button class="btn-secondary" id="decrement7">-</button>
                     <input type="number" id="quantity7" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment7">+</button>
-                    <button onclick="addToCart(450, 'Waterfal', 'quantity7')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(450, 'Waterfal', 'quantity7')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
             </div>
             <div id="products" class="col-lg-3">
@@ -143,7 +147,7 @@
                     <button class="btn-secondary" id="decrement8">-</button>
                     <input type="number" id="quantity8" class="qty" min="1" value="1" readonly>
                     <button class="btn-secondary" id="increment8">+</button>
-                    <button onclick="addToCart(275, 'Tea is çay', 'quantity8')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                    <button onclick="addToCart(275, 'Tea is çay', 'quantity8')" class="btnProdcts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -173,6 +177,12 @@
             <a href="https://github.com/nozzie-dev/shopping-cart" target="_blank">GitHub</a>.
         </p>
     </footer>
+</div>
+        </div>
+        
+    </divdiv>
+    
+    
     
     <script src="scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -14,8 +14,7 @@ body::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.25); 
+    height: 100%;    
     pointer-events: none;
 }
 
@@ -24,6 +23,12 @@ body::after {
     font-family: cursive;
     font-size: large;
     padding: 15px;
+}
+.nav-link {
+    color: #b42411; 
+}
+#cart-link a{
+    color: #fff;
 }
 #productImage{
      width: 250px; 
@@ -37,10 +42,11 @@ body::after {
 .quantity-counter{
     display: inline;
 }
-.btnProucts{
+.btnProdcts{
     border-radius: 5px;
+    color: #b42411;
 }
-.btnProucts i {
+.btnProdcts i {
     margin-right: 5px; 
 }
 
@@ -59,18 +65,21 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1050;
     backdrop-filter: blur(5px);
 }
+
 .cart-content {
     position: fixed;
-    top: 10%;
-    right: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 80%;
     max-width: 500px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     z-index: 1060;
     overflow: hidden; 
 }
@@ -82,19 +91,77 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 25px;
     background-image: url('src/pexels-elvin-muradzade-flag-for-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.55; 
+    opacity: 0.75; 
     z-index: -1; 
 }
 
+
 .close-cart {
     position: absolute;
+    font-size: x-large;
     top: 10px;
-    right: 10px;
+    right: 15px;
     cursor: pointer;
+    color: #b42411;
 }
 
+li{
+    color: #b42411;
+}
+
+footer{
+    text-align: center;
+    font-style: italic;
+    font-family: cursive;
+}
+
+#liftBody {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; 
+    border: 1px solid #343a40;
+    border-radius: 15px;
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.overlay-lift {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 246, 246, 0.05); 
+    z-index: 1; 
+    backdrop-filter: blur(5px); 
+}
+
+.container {
+    z-index: 2; 
+    text-align: center; 
+    padding: 20px;
+    color: #fff; 
+}
+#liftBody{
+    margin-bottom: 25px;
+}
+
+/* Override default colours */
+.btn-primary {
+    background-color: #b42411 !important;
+    border-color: #b42411 !important;
+}
+
+.btn-secondary {
+    background-color: rgb(192, 81, 81) !important;
+    border-color: #b42411 !important;
+    color: #b42411;
+}
 
