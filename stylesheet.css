@@ -40,6 +40,9 @@ body::after {
 .btnProucts{
     border-radius: 5px;
 }
+.btnProucts i {
+    margin-right: 5px; 
+}
 
 h1 {
     color: #343a40;

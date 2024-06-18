@@ -41,7 +41,7 @@
         <h1 class="mb-4">Products</h1>
         <!--Cart Items-->
         <div class="row">
-            <div id="products" class="col-lg-4">
+            <div id="products" class="col-lg-3">
                 <img src="src/pexels-soner-arkan-dabke-man.jpg" 
                  alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
                  id="productImage" />
@@ -54,7 +54,7 @@
                     <button onclick="addToCart(300, 'Sufi Whirling Man', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
                 </div>
                </div>
-            <div id="products" class="col-lg-4">
+            <div id="products" class="col-lg-3">
                 <img src="src/pexels-ridvan-ayrik-architecture-view.jpg" 
                  alt="Photo by RIDVAN AYRIK: https://www.pexels.com/photo/a-view-of-the-city-of-istanbul-with-the-blue-mosque-in-the-background-15406805/" 
                  id="productImage" />
@@ -67,7 +67,7 @@
                     <button onclick="addToCart(400, 'Blue Mosque', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
                  </div>
-            <div id="products" class="col-lg-4">
+            <div id="products" class="col-lg-3">
                 <img src="src/pexels-maria-loznevaya-cappadocia.jpg" 
                  alt="Photo by Maria Loznevaya: https://www.pexels.com/photo/aerial-view-of-hot-air-balloons-over-cappadocia-14026383/" 
                  id="productImage" />
@@ -80,7 +80,7 @@
                     <button onclick="addToCart(250, 'Hot Air Balloon', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
                  </div>
-            <div id="products" class="col-lg-4">
+            <div id="products" class="col-lg-3">
                 <img src="src/pexels-trksami-Eurasia-resturant.jpg" 
                  alt="Photo by Sami TÜRK: https://www.pexels.com/photo/view-of-maidens-tower-at-night-20882310/" 
                  id="productImage" />
@@ -93,7 +93,7 @@
                     <button onclick="addToCart(150, 'Maiden Towers', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
                  </div>
-            <div id="products" class="col-lg-4">
+            <div id="products" class="col-lg-3">
                 <img src="src/pexels-wendywei-antalya-ancient-city.jpg" 
                  alt="Photo by Wendy Wei: https://www.pexels.com/photo/aerial-view-of-the-aspendos-roman-theatre-serik-antalya-province-turkey-14375249/" 
                  id="productImage" />
@@ -105,8 +105,8 @@
                     <button id="increment5">+</button>
                     <button onclick="addToCart(350, 'Roman Theatre', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
-                  </div>
-            <div id="products" class="col-lg-4">
+           </div>
+            <div id="products" class="col-lg-3">
                 <img src="src/pexels-caspersomia-mosque.jpg" 
                  alt="Photo by casper somia: https://www.pexels.com/photo/back-view-of-a-woman-standing-near-a-swimming-pool-14761553/" 
                  id="productImage" />
@@ -118,7 +118,33 @@
                     <button id="increment6">+</button>
                     <button onclick="addToCart(300, 'Woman By Pool', 'quantity1')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
                 </div>
-                   </div>
+            </div>
+            <div id="products" class="col-lg-3">
+                <img src="src/pexels-pavel-danilyuk-waterfall.jpg" 
+                 alt="Photo by Pavel Danilyuk: https://www.pexels.com/photo/duden-park-with-high-waterfalls-in-antalya-turkey-8861688/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="450">R450</h2>
+                <p>Antalya: Waterfall</p>
+                <div class="quantity-counter">
+                    <button id="decrement7">-</button>
+                    <input type="number" id="quantity7" class="qty" min="1" value="1" readonly>
+                    <button id="increment7">+</button>
+                    <button onclick="addToCart(450, 'Waterfal', 'quantity7')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                </div>
+            </div>
+            <div id="products" class="col-lg-3">
+                <img src="src/pexels-i-clal-aglamaz-tea.jpg" 
+                 alt="Photo by İclâl Ağlamaz: https://www.pexels.com/photo/a-turkish-tea-over-a-big-jars-9942965/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="275">R275</h2>
+                <p>Hospitality: Tea is Çay</p>
+                <div class="quantity-counter">
+                    <button id="decrement8">-</button>
+                    <input type="number" id="quantity8" class="qty" min="1" value="1" readonly>
+                    <button id="increment8">+</button>
+                    <button onclick="addToCart(275, 'Tea is Çay', 'quantity8')" class="btnProucts btn-primary mb-3"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to Cart</button>
+                </div>
+            </div>
         </div>
         <!--Cart Display-->
         <div class="cart-overlay" id="cartOverlay">

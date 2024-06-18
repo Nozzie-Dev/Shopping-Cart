@@ -112,7 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
         {decrement: 'decrement3', increment: 'increment3', quantity: 'quantity3'},
         {decrement: 'decrement4', increment: 'increment4', quantity: 'quantity4'},
         {decrement: 'decrement5', increment: 'increment5', quantity: 'quantity5'},
-        {decrement: 'decrement6', increment: 'increment6', quantity: 'quantity6'}
+        {decrement: 'decrement6', increment: 'increment6', quantity: 'quantity6'},
+        {decrement: 'decrement7', increment: 'increment7', quantity: 'quantity7'},
+        {decrement: 'decrement8', increment: 'increment8', quantity: 'quantity8'}
     ];
 
     buttons.forEach(button => {
