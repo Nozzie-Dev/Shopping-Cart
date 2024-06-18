@@ -1,5 +1,6 @@
 //Declare empty cart array
 let cart = [];
+
 // Send items to cart array
 function addToCart(price, description, quantityId) {
     const quantity = document.getElementById(quantityId).value;
@@ -11,16 +12,19 @@ function addToCart(price, description, quantityId) {
     cart.push(item);
     updateCartDisplay();
 }
+
 // Empty cart array, deleting all items displayed in cart
 function clearCart() {
     cart = [];
     updateCartDisplay();
 }
+
 // Create items in cart
 function updateCartDisplay() {
     const cartContents = document.getElementById('cartContents');
     cartContents.innerHTML = '';
     let totalCost = 0;
+    let totalItems = 0;
 
     cart.forEach((item, index) => {
         const li = document.createElement('li');
@@ -61,10 +65,13 @@ function updateCartDisplay() {
         cartContents.appendChild(li);
 
         totalCost += item.price * item.quantity;
+        totalItems += item.quantity;
     });
 
     document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+    document.getElementById('itemCount').textContent = totalItems;
 }
+
 // Update individual item in cart
 function editCartItem(index) {
     const item = cart[index];
@@ -74,6 +81,7 @@ function editCartItem(index) {
         updateCartDisplay();
     }
 }
+
 // Delete individual item in cart
 function deleteCartItem(index) {
     cart.splice(index, 1);
@@ -106,5 +114,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-

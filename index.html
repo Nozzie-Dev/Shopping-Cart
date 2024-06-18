@@ -17,13 +17,18 @@
                     <h3 class="float-md-start mb-0">Glimpses Of Turkiye</h3>
                     <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#home">Home</a>
                     <a class="nav-link fw-bold py-1 px-0" href="#products">Products</a>
-                    <h3><a class="nav-link fw-bold py-1 px-0" href="#cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></h3>
+                    <h3>
+                        <a class="nav-link fw-bold py-1 px-0" href="#cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"><span id="itemCount" class="badge badge-pill ">0</span></i>
+                            
+                        </a>
+                    </h3>
                 </nav>
             </div>
         </header>
-      </div>
-      <!--Home/Hero-->
-      <div id="home" class="container mt-5">
+    </div>
+    <!--Home/Hero-->
+    <div id="home" class="container mt-5">
         <div class="jumbotron text-center">
             <h1 class="display-4">Welcome to Glimpses of Turkey</h1>
             <p class="lead">Discover and purchase breathtaking images capturing the essence of Turkey.</p>
@@ -37,19 +42,91 @@
         <h1 class="mb-4">Products</h1>
         <!--Cart Items-->
         <div class="row">
-            <div class="col-lg-4">
-              <svg class="bd-placeholder-img" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-              <h2 class="fw-normal" data-price="300">Price</h2>
-              <p>Name/ Description</p>
-              <div class="quantity-counter">
-                <label for="quantity1">Quantity:</label>
-                <button id="decrement1">-</button>
-                <input type="number" id="quantity1" min="1" value="1" readonly>
-                <button id="increment1">+</button>
-              </div>
-              <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
+            <div id="products" class="col-lg-4">
+                <img src="src/pexels-soner-arkan-dabke-man.jpg" 
+                 alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="300">Price</h2>
+                <p>Name/ Description</p>
+                <div class="quantity-counter">
+                    <label for="quantity1">Quantity:</label>
+                    <button id="decrement1">-</button>
+                    <input type="number" id="quantity1" min="1" value="1" readonly>
+                    <button id="increment1">+</button>
+                </div>
+                <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
             </div>
-          </div>
+            <div id="products" class="col-lg-4">
+                <img src="src/pexels-soner-arkan-dabke-man.jpg" 
+                 alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="300">Price</h2>
+                <p>Name/ Description</p>
+                <div class="quantity-counter">
+                    <label for="quantity1">Quantity:</label>
+                    <button id="decrement1">-</button>
+                    <input type="number" id="quantity1" min="1" value="1" readonly>
+                    <button id="increment1">+</button>
+                </div>
+                <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
+            </div>
+            <div id="products" class="col-lg-4">
+                <img src="src/pexels-soner-arkan-dabke-man.jpg" 
+                 alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="300">Price</h2>
+                <p>Name/ Description</p>
+                <div class="quantity-counter">
+                    <label for="quantity1">Quantity:</label>
+                    <button id="decrement1">-</button>
+                    <input type="number" id="quantity1" min="1" value="1" readonly>
+                    <button id="increment1">+</button>
+                </div>
+                <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
+            </div>
+            <div id="products" class="col-lg-4">
+                <img src="src/pexels-soner-arkan-dabke-man.jpg" 
+                 alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="300">Price</h2>
+                <p>Name/ Description</p>
+                <div class="quantity-counter">
+                    <label for="quantity1">Quantity:</label>
+                    <button id="decrement1">-</button>
+                    <input type="number" id="quantity1" min="1" value="1" readonly>
+                    <button id="increment1">+</button>
+                </div>
+                <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
+            </div>
+            <div id="products" class="col-lg-4">
+                <img src="src/pexels-soner-arkan-dabke-man.jpg" 
+                 alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="300">Price</h2>
+                <p>Name/ Description</p>
+                <div class="quantity-counter">
+                    <label for="quantity1">Quantity:</label>
+                    <button id="decrement1">-</button>
+                    <input type="number" id="quantity1" min="1" value="1" readonly>
+                    <button id="increment1">+</button>
+                </div>
+                <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
+            </div>
+            <div id="products" class="col-lg-4">
+                <img src="src/pexels-soner-arkan-dabke-man.jpg" 
+                 alt="Photo by Soner Arkan: https://www.pexels.com/photo/man-performing-sufi-whirling-against-a-mosque-12943931/" 
+                 id="productImage" />
+                 <h2 class="fw-normal" data-price="300">Price</h2>
+                <p>Name/ Description</p>
+                <div class="quantity-counter">
+                    <label for="quantity1">Quantity:</label>
+                    <button id="decrement1">-</button>
+                    <input type="number" id="quantity1" min="1" value="1" readonly>
+                    <button id="increment1">+</button>
+                </div>
+                <button onclick="addToCart(300, 'Item 1', 'quantity1')" class="btn btn-primary mb-3">Add to Cart</button>
+            </div>
+        </div>
         <!--Cart Display-->
         <div id="cart" class="mt-3">
             <h2>Shopping Cart</h2>
