@@ -1,4 +1,4 @@
-//Declare empty cart array
+// Declare empty cart array
 let cart = [];
 
 // Send items to cart array
@@ -11,12 +11,14 @@ function addToCart(price, description, quantityId) {
     };
     cart.push(item);
     updateCartDisplay();
+    updateShopButton();
 }
 
 // Empty cart array, deleting all items displayed in cart
 function clearCart() {
     cart = [];
     updateCartDisplay();
+    updateShopButton();
 }
 
 // Create items in cart
@@ -40,23 +42,26 @@ function updateCartDisplay() {
         itemName.textContent = item.name;
         itemDetails.appendChild(itemName);
 
-        // Item quantity
+        // Item quantity with increment/decrement buttons
         const itemQuantity = document.createElement('div');
         itemQuantity.className = 'col';
-        itemQuantity.textContent = item.quantity;
+        itemQuantity.innerHTML = `
+            <button onclick="decrementCartItem(${index})" class="btn btn-sm btn-secondary">-</button>
+            <span id="cartItemQuantity${index}">${item.quantity}</span>
+            <button onclick="incrementCartItem(${index})" class="btn btn-sm btn-secondary">+</button>
+        `;
         itemDetails.appendChild(itemQuantity);
 
         // Item price
         const itemPrice = document.createElement('div');
         itemPrice.className = 'col';
-        itemPrice.textContent = item.price * item.quantity;
+        itemPrice.textContent = `R${(item.price).toFixed(2)}`;
         itemDetails.appendChild(itemPrice);
 
         // Cart manipulation icons from font awesome
         const actionIcons = document.createElement('div');
         actionIcons.className = 'col';
         actionIcons.innerHTML = `
-            <i class="fas fa-edit mr-3" onclick="editCartItem(${index})"></i>
             <i class="fas fa-trash" onclick="deleteCartItem(${index})"></i>
         `;
         itemDetails.appendChild(actionIcons);
@@ -66,19 +71,29 @@ function updateCartDisplay() {
 
         totalCost += item.price * item.quantity;
         totalItems += item.quantity;
+
+        updateShopButton();
     });
 
     document.getElementById('totalCost').textContent = totalCost.toFixed(2);
     document.getElementById('itemCount').textContent = totalItems;
 }
 
-// Update individual item in cart
-function editCartItem(index) {
-    const item = cart[index];
-    const newQuantity = prompt(`Edit quantity for ${item.name}:`, item.quantity);
-    if (newQuantity !== null && !isNaN(newQuantity) && newQuantity > 0) {
-        cart[index].quantity = parseInt(newQuantity);
+// Increase item quantity in cart
+function incrementCartItem(index) {
+    cart[index].quantity += 1;
+    document.getElementById(`cartItemQuantity${index}`).textContent = cart[index].quantity;
+    updateCartDisplay();
+    updateShopButton();
+}
+
+// Decrease item quantity in cart
+function decrementCartItem(index) {
+    if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+        document.getElementById(`cartItemQuantity${index}`).textContent = cart[index].quantity;
         updateCartDisplay();
+        updateShopButton();
     }
 }
 
@@ -86,6 +101,7 @@ function editCartItem(index) {
 function deleteCartItem(index) {
     cart.splice(index, 1);
     updateCartDisplay();
+    updateShopButton();
 }
 
 // Quantity manipulation in products
@@ -93,7 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = [
         {decrement: 'decrement1', increment: 'increment1', quantity: 'quantity1'},
         {decrement: 'decrement2', increment: 'increment2', quantity: 'quantity2'},
-        {decrement: 'decrement3', increment: 'increment3', quantity: 'quantity3'}
+        {decrement: 'decrement3', increment: 'increment3', quantity: 'quantity3'},
+        {decrement: 'decrement4', increment: 'increment4', quantity: 'quantity4'},
+        {decrement: 'decrement5', increment: 'increment5', quantity: 'quantity5'},
+        {decrement: 'decrement6', increment: 'increment6', quantity: 'quantity6'}
     ];
 
     buttons.forEach(button => {
@@ -114,3 +133,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+//cart as an overlay handling
+function toggleCart() {
+    const cartOverlay = document.getElementById('cartOverlay');
+    cartOverlay.style.display = cartOverlay.style.display === 'none' || cartOverlay.style.display === '' ? 'block' : 'none';
+    updateShopButton();
+}
+
+function updateShopButton() {
+    const cartContents = document.getElementById('cartContents');
+    const shopButton = document.getElementById('shopButton');
+    if (cartContents.children.length === 0) {
+        shopButton.innerText = 'Start Shopping';
+    } else {
+        shopButton.innerText = 'Continue Shopping';
+    }
+}
+
+function startShopping() {
+    toggleCart();
+    window.location.href = '#products';
+}
