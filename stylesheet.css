@@ -44,6 +44,10 @@ body::after {
     margin-right: 5px; 
 }
 
+.quantity-counter button, input {
+    border-radius: 5px;
+}
+
 h1 {
     color: #343a40;
 }
@@ -92,3 +96,5 @@ h1 {
     right: 10px;
     cursor: pointer;
 }
+
+
