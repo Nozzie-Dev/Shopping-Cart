@@ -25,7 +25,6 @@ body::after {
     font-family: cursive;
     font-size: large;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav-link {
@@ -132,9 +131,8 @@ footer {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    border: 1px solid #343a40;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
