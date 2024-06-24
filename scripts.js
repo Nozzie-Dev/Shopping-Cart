@@ -3,13 +3,31 @@ let cart = [];
 
 // Send items to cart array
 function addToCart(price, description, quantityId) {
-    const quantity = document.getElementById(quantityId).value;
-    const item = {
-        name: description,
-        quantity: parseInt(quantity),
-        price: price
-    };
-    cart.push(item);
+    const quantity = parseInt(document.getElementById(quantityId).value);
+    if (isNaN(quantity) || quantity <= 0) {
+        console.log('Invalid quantity:', quantity);
+        return;
+    }
+    
+    // Check if item already exists in the cart
+    const inCart = cart.findIndex(item => item.name === description);
+
+    if (inCart !== -1) {
+        // If item exists, update the quantity
+        cart[inCart].quantity += quantity;
+        console.log('Updated item quantity:', cart[inCart]);
+    } else {
+        // If item does not exist, add it to the cart
+        const item = {
+            name: description,
+            quantity: quantity,
+            price: price
+        };
+        cart.push(item);
+        console.log('Item added to cart:', item);
+    }
+    
+    console.log('Current cart:', cart);
     updateCartDisplay();
     updateShopButton();
 }
@@ -17,6 +35,7 @@ function addToCart(price, description, quantityId) {
 // Empty cart array, deleting all items displayed in cart
 function clearCart() {
     cart = [];
+    console.log('Cart cleared');
     updateCartDisplay();
     updateShopButton();
 }
@@ -71,18 +90,20 @@ function updateCartDisplay() {
 
         totalCost += item.price * item.quantity;
         totalItems += item.quantity;
-
-        updateShopButton();
     });
 
     document.getElementById('totalCost').textContent = totalCost.toFixed(2);
     document.getElementById('itemCount').textContent = totalItems;
+    console.log('Cart display updated');
+    console.log('Total cost:', totalCost);
+    console.log('Total items:', totalItems);
+    updateShopButton();
 }
 
 // Increase item quantity in cart
 function incrementCartItem(index) {
     cart[index].quantity += 1;
-    document.getElementById(`cartItemQuantity${index}`).textContent = cart[index].quantity;
+    console.log('Incremented item quantity:', cart[index]);
     updateCartDisplay();
     updateShopButton();
 }
@@ -91,7 +112,7 @@ function incrementCartItem(index) {
 function decrementCartItem(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity -= 1;
-        document.getElementById(`cartItemQuantity${index}`).textContent = cart[index].quantity;
+        console.log('Decremented item quantity:', cart[index]);
         updateCartDisplay();
         updateShopButton();
     }
@@ -99,6 +120,7 @@ function decrementCartItem(index) {
 
 // Delete individual item in cart
 function deleteCartItem(index) {
+    console.log('Deleting item:', cart[index]);
     cart.splice(index, 1);
     updateCartDisplay();
     updateShopButton();
@@ -126,12 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
             let currentValue = parseInt(quantityInput.value);
             if (currentValue > 1) {
                 quantityInput.value = currentValue - 1;
+                console.log(`Decremented ${button.quantity} to ${quantityInput.value}`);
             }
         });
 
         incrementButton.addEventListener('click', () => {
             let currentValue = parseInt(quantityInput.value);
             quantityInput.value = currentValue + 1;
+            console.log(`Incremented ${button.quantity} to ${quantityInput.value}`);
         });
     });
 });
@@ -140,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleCart() {
     const cartOverlay = document.getElementById('cartOverlay');
     cartOverlay.style.display = cartOverlay.style.display === 'none' || cartOverlay.style.display === '' ? 'block' : 'none';
+    console.log('Cart overlay toggled. New display:', cartOverlay.style.display);
     updateShopButton();
 }
 
@@ -151,9 +176,11 @@ function updateShopButton() {
     } else {
         shopButton.innerText = 'Continue Shopping';
     }
+    console.log('Shop button updated:', shopButton.innerText);
 }
 
 function startShopping() {
     toggleCart();
     window.location.href = '#products';
+    console.log('Started shopping. Redirected to #products');
 }
